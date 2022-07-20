@@ -37,8 +37,9 @@ class _YourEmailState extends State<YourEmail> {
             ),
             Text(
               'ป้อนอีเมล์ของคุณ',
-              style: GoogleFonts.charm(
-                fontSize: 35.0,
+              //style: GoogleFonts.charm(
+              style: TextStyle(
+                fontSize: 30.0,
                 color: Colors.green[500],
                 //fontWeight: FontWeight.bold,
               ),

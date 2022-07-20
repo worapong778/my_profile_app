@@ -37,8 +37,8 @@ class _YourPhoneUIState extends State<YourPhoneUI> {
             ),
             Text(
               'ป้อนเบอร์โทรของคุณ',
-              style: GoogleFonts.charm(
-                fontSize: 35.0,
+              style: TextStyle(
+                fontSize: 30.0,
                 color: Colors.green[500],
                 //fontWeight: FontWeight.bold,
               ),
