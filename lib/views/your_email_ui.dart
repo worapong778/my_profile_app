@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class YourEmail extends StatefulWidget {
   const YourEmail({Key? key}) : super(key: key);
@@ -10,6 +11,10 @@ class YourEmail extends StatefulWidget {
 
 class _YourEmailState extends State<YourEmail> {
   TextEditingController emailCtrl = TextEditingController(text: '');
+  Future addYourEmailToSF() async {
+    SharedPreferences prefer = await SharedPreferences.getInstance();
+    prefer.setString('youremail', emailCtrl.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +102,9 @@ class _YourEmailState extends State<YourEmail> {
                   );
                 } else {
                   //บันทึกสิ่งที่ป้อนลง SharePreference แล้วกลับไปหน้า HomeUI
-
+                  addYourEmailToSF().then((value) {
+                    Navigator.pop(context);
+                  });
                 }
               },
               child: Text(
